@@ -37,6 +37,16 @@ class Topic implements RecipientInterface
      */
     public function getIdentifier(): string
     {
+
+        return self::$prefix . $this->getTopic();
+    }
+
+    /**
+     * @return string
+     * @throws BadRecipientIdentifierException
+     */
+    public function getTopic(): string
+    {
         if (empty($this->topic)) {
             throw new BadRecipientIdentifierException('Empty topic');
         }
@@ -44,7 +54,7 @@ class Topic implements RecipientInterface
             throw new BadRecipientIdentifierException('Bad topic format');
         }
 
-        return self::$prefix . $this->topic;
+        return $this->topic;
     }
 
     private function testFormat(): bool

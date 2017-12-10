@@ -21,6 +21,13 @@ class TopicTest extends TestCase
         $this->assertEquals('/topics/' . $identifier, $device->getIdentifier());
     }
 
+    public function testGetTopic()
+    {
+        $identifier = 'ident';
+        $device = new Topic($identifier);
+        $this->assertEquals($identifier, $device->getTopic());
+    }
+
     public function testGetIdentifierEmptyException()
     {
         $device = new Topic('');
