@@ -6,7 +6,7 @@
  * Time: 16:06
  */
 
-namespace Jetifier\Content;
+namespace Jetifier\Payload;
 
 
 class Data implements \JsonSerializable

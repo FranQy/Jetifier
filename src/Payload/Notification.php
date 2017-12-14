@@ -6,7 +6,7 @@
  * Time: 15:19
  */
 
-namespace Jetifier\Content;
+namespace Jetifier\Payload;
 
 /**
  * @link https://firebase.google.com/docs/cloud-messaging/http-server-ref#notification-payload-support

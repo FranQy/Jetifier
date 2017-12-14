@@ -8,7 +8,7 @@
 
 namespace Jetifier\Tests\Content;
 
-use Jetifier\Content\Notification;
+use Jetifier\Payload\Notification;
 use PHPUnit\Framework\TestCase;
 
 class NotificationTest extends TestCase

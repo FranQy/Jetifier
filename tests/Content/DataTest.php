@@ -8,7 +8,7 @@
 
 namespace Jetifier\Tests\Content;
 
-use Jetifier\Content\Data;
+use Jetifier\Payload\Data;
 use PHPUnit\Framework\TestCase;
 
 class DataTest extends TestCase
