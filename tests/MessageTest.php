@@ -72,5 +72,12 @@ class MessageTest extends TestCase
        $this->assertEquals($expect,$messageArray);
     }
 
+    public function testSerializeIncompleteMessage()
+    {
+        $this->expectException(JetifierException::class);
+        $message = new Message();
+        $message->jsonSerialize();
+    }
+
 
 }
