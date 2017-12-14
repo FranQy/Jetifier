@@ -9,7 +9,7 @@
 namespace Jetifier\Constants;
 
 
-final class Config
+final class SelfConfig
 {
     public const API_URL = 'https://fcm.googleapis.com/fcm/send';
 }
