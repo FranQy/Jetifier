@@ -12,7 +12,7 @@ Jetifier is simple PHP library to send push notifications and messages via Fireb
 # Usage
 ## send to device
 ```php
-client = new Client('API_KEY');
+$client = new Client('API_KEY');
 $message = new Message();
 $recipient = new Device('TOKEN');
 $notification = new Notification();
@@ -26,7 +26,7 @@ $client->send($message);
 ```
 ## send to topic
 ```php
-client = new Client('API_KEY');
+$client = new Client('API_KEY');
 $message = new Message();
 $recipient = new Topic('topic_name');
 $notification = new Notification();
@@ -41,7 +41,7 @@ $client->send($message);
 
 ## send to topic condition
 ```php
-client = new Client('API_KEY');
+$client = new Client('API_KEY');
 $message = new Message();
 
 $recipient = new Condition(new Topic('topic_name'));
