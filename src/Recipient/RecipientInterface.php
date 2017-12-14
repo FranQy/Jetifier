@@ -18,4 +18,5 @@ interface RecipientInterface
      * @throws BadRecipientIdentifierException
      */
     public function getIdentifier(): string;
+    public function getKey():string;
 }

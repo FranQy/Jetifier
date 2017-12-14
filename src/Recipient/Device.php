@@ -14,6 +14,7 @@ use Jetifier\Exceptions\BadRecipientIdentifierException;
 class Device implements RecipientInterface
 {
 
+    private static $key = 'to';
     /**
      *
      * @var String $deviceToken
@@ -40,5 +41,10 @@ class Device implements RecipientInterface
             throw new BadRecipientIdentifierException('Empty device identifier');
         }
         return $this->deviceToken;
+    }
+
+    public function getKey(): string
+    {
+       return self::$key;
     }
 }

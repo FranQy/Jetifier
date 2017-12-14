@@ -20,6 +20,7 @@ class Topic implements RecipientInterface
 
     private static $formatRegex = '/[a-zA-Z0-9-_.~%]+/';
     private static $prefix = '/topics/';
+    private static $key='to';
     private $topic;
 
     /**
@@ -62,5 +63,10 @@ class Topic implements RecipientInterface
         $out = [];
         preg_match(self::$formatRegex, $this->topic, $out);
         return ($out[0] ?? null) === $this->topic;
+    }
+
+    public function getKey(): string
+    {
+      return self::$key;
     }
 }

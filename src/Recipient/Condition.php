@@ -14,6 +14,7 @@ use Jetifier\Exceptions\BadRecipientIdentifierException;
 class Condition implements RecipientInterface
 {
 
+    private static $key='condition';
     private static $maxTopicsCount = 3;
     private $topicsCount = 0;
     private $condition = '';
@@ -86,5 +87,10 @@ class Condition implements RecipientInterface
     {
         $this->appendCondition('||', $subCondition->getIdentifier());
         $this->incrementTopicsCounter($subCondition->topicsCount);
+    }
+
+    public function getKey(): string
+    {
+        return self::$key;
     }
 }

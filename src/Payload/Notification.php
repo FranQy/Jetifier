@@ -29,10 +29,11 @@ class Notification implements \JsonSerializable
      * Notification constructor.
      * @param string $title The notification's title.  This field is not visible on iOS phones and tablets.
      */
-    public function __construct(?string $title)
+    public function __construct(?string $title=null)
     {
         $this->data['title'] = $title;
     }
+
 
     /**
      * @param $name
@@ -42,6 +43,17 @@ class Notification implements \JsonSerializable
     public function __set($name, $value)
     {
         throw new \RuntimeException('Cannot add custom param to notification');
+    }
+
+    /**
+     * The notification's title text.
+     * devices: All
+     * @param string $title
+     * @return Notification
+     */
+    public function setTitle(string $title){
+        $this->data['title']=$title;
+        return $this;
     }
 
     /**
