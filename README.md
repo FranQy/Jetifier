@@ -19,7 +19,7 @@ $notification = new Notification();
 
 $notification->setTitle('title');
 
-$message->setRecipient($to$recipientpic)
+$message->setRecipient($recipient)
     ->setNotification($notification)
 
 $client->send($message);
@@ -33,7 +33,7 @@ $notification = new Notification();
 
 $notification->setTitle('title');
 
-$message->setRecipient($to$recipientpic)
+$message->setRecipient($recipient)
     ->setNotification($notification)
 
 $client->send($message);
@@ -50,7 +50,7 @@ $recipient->addOrTopic(new Topic('second_topic');
 $notification = new Notification();
 $notification->setTitle('title');
 
-$message->setRecipient($to$recipientpic)
+$message->setRecipient($recipient)
     ->setNotification($notification)
 
 $client->send($message);
