@@ -8,8 +8,21 @@ Jetifier is simple PHP library to send push notifications and messages via Fireb
   * Condition (see: [Docs](https://firebase.google.com/docs/cloud-messaging/http-server-ref#table1))
 * Currently only PHP 7.1 and above
 * Supports sending messages via curl, file_get_contents and open to your implememtations (default curl)
+* Simple and fast notification, or customize everything
 
 # Usage
+## simple send
+```php
+try {
+    $response = (new \Jetifier\Jetifier('API_KEY'))
+        ->setTitle('title') // title of notification
+        ->setTopic('topic') // topic recipient
+        ->send();
+}catch (\Jetifier\Exceptions\JetifierException $ex){
+    //Exception
+}
+```
+
 ## send to device
 ```php
 $client = new Client('API_KEY');
