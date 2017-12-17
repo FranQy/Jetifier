@@ -40,19 +40,19 @@ class Condition implements RecipientInterface
         $this->topicsCount += $amount;
     }
 
-    public function addAndTopic(Topic $topic)
+    public function andTopic(Topic $topic)
     {
         $this->appendTopicToCondition('&&', $topic->getTopic());
         $this->incrementTopicsCounter(1);
     }
 
-    public function addOrTopic(Topic $topic)
+    public function orTopic(Topic $topic)
     {
         $this->appendTopicToCondition('||', $topic->getTopic());
         $this->incrementTopicsCounter(1);
     }
 
-    public function addAndCondition(Condition $subCondition)
+    public function andCondition(Condition $subCondition)
     {
         $this->appendCondition('&&', $subCondition->getIdentifier());
         $this->incrementTopicsCounter($subCondition->topicsCount);
@@ -83,7 +83,7 @@ class Condition implements RecipientInterface
         }
     }
 
-    public function addOrCondition(Condition $subCondition)
+    public function orCondition(Condition $subCondition)
     {
         $this->appendCondition('||', $subCondition->getIdentifier());
         $this->incrementTopicsCounter($subCondition->topicsCount);

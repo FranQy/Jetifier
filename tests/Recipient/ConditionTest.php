@@ -29,7 +29,7 @@ class ConditionTest extends TestCase
 
         $formattedCondition = "'a' in topics && 'b' in topics";
         $condition = new Condition(new Topic('a'));
-        $condition->addAndTopic(new Topic('b'));
+        $condition->andTopic(new Topic('b'));
 
         $this->assertEquals($formattedCondition, $condition->getIdentifier());
     }
@@ -40,9 +40,9 @@ class ConditionTest extends TestCase
         $this->expectException(BadRecipientIdentifierException::class);
 
         $condition = new Condition(new Topic('a'));
-        $condition->addAndTopic(new Topic('b'));
-        $condition->addAndTopic(new Topic('c'));
-        $condition->addAndTopic(new Topic('d'));
+        $condition->andTopic(new Topic('b'));
+        $condition->andTopic(new Topic('c'));
+        $condition->andTopic(new Topic('d'));
         $condition->getIdentifier();
     }
 
@@ -52,7 +52,7 @@ class ConditionTest extends TestCase
         $formattedCondition = "'a' in topics || 'b' in topics";
 
         $condition = new Condition(new Topic('a'));
-        $condition->addOrTopic(new Topic('b'));
+        $condition->orTopic(new Topic('b'));
 
         $this->assertEquals($formattedCondition, $condition->getIdentifier());
     }
@@ -63,9 +63,9 @@ class ConditionTest extends TestCase
 
         $condition = new Condition(new Topic('a'));
         $subCondition = new Condition(new Topic('b'));
-        $subCondition->addOrTopic(new Topic('c'));
+        $subCondition->orTopic(new Topic('c'));
 
-        $condition->addAndCondition($subCondition);
+        $condition->andCondition($subCondition);
 
         $this->assertEquals($formattedCondition, $condition->getIdentifier());
     }
@@ -76,9 +76,9 @@ class ConditionTest extends TestCase
 
         $condition = new Condition(new Topic('a'));
         $subCondition = new Condition(new Topic('b'));
-        $subCondition->addOrTopic(new Topic('c'));
+        $subCondition->orTopic(new Topic('c'));
 
-        $condition->addOrCondition($subCondition);
+        $condition->orCondition($subCondition);
 
         $this->assertEquals($formattedCondition, $condition->getIdentifier());
     }
@@ -90,9 +90,9 @@ class ConditionTest extends TestCase
 
         $condition = new Condition(new Topic('a'));
         $subCondition = new Condition(new Topic('b'));
-        $condition->addAndTopic(new Topic('c'));
-        $subCondition->addOrTopic(new Topic('d'));
-        $condition->addOrCondition($subCondition);
+        $condition->andTopic(new Topic('c'));
+        $subCondition->orTopic(new Topic('d'));
+        $condition->orCondition($subCondition);
 
         $condition->getIdentifier();
 

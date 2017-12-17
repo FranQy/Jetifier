@@ -58,7 +58,7 @@ $client = new Client('API_KEY');
 $message = new Message();
 
 $recipient = new Condition(new Topic('topic_name'));
-$recipient->addOrTopic(new Topic('second_topic');
+$recipient->orTopic(new Topic('second_topic');
 
 $notification = new Notification();
 $notification->setTitle('title');
@@ -75,8 +75,8 @@ $client->send($message);
 
 $recipient = new Condition(new Topic('topic_name'));
 $subCondition = new Condition(new Topic('second_topic'));
-$subCondition->addOrTopic(new Topic('third_topic');
-$recipient->addAndCondition($subCondition);
+$subCondition->orTopic(new Topic('third_topic');
+$recipient->andCondition($subCondition);
 
 ...
 ```
