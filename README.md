@@ -1,3 +1,7 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/93fa3e73ce31431e616a/maintainability)](https://codeclimate.com/github/FranQy/Jetifier/maintainability)
+[![Build Status](https://travis-ci.org/FranQy/Jetifier.svg?branch=master)](https://travis-ci.org/FranQy/Jetifier)
+[![Dependency Status](https://beta.gemnasium.com/badges/github.com/FranQy/Jetifier.svg)](https://beta.gemnasium.com/projects/github.com/FranQy/Jetifier)
+[![Coverage Status](https://codecov.io/gh/FranQy/Jetifier/branch/master/graphs/badge.svg?branch=master)](https://codecov.io/gh/FranQy/Jetifier/branch/master)
 # Jetifier
 Jetifier is simple PHP library to send push notifications and messages via Firebase Cloud Messanging.
 
