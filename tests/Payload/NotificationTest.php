@@ -9,6 +9,7 @@
 namespace Jetifier\Tests\Content;
 
 use Jetifier\Payload\Notification;
+use PHPUnit\Framework\MockObject\RuntimeException;
 use PHPUnit\Framework\TestCase;
 
 class NotificationTest extends TestCase
@@ -79,7 +80,45 @@ class NotificationTest extends TestCase
         $this->expectException(\InvalidArgumentException::class);
         $notification = new Notification(null);
         $notification->setBadge(-1);
-
     }
+
+    public function testSetTag()
+    {
+        $notification = new Notification(null);
+        $notification->setTag('tagName');
+        $this->assertEquals(['tag' => 'tagName'], $notification->jsonSerialize());
+    }
+
+    public function testSetIcon()
+    {
+        $notification = new Notification(null);
+        $notification->setIcon('iconName');
+        $this->assertEquals(['icon' => 'iconName'], $notification->jsonSerialize());
+    }
+
+    public function testSetClickAction()
+    {
+        $notification = new Notification(null);
+        $notification->setClickAction('ca');
+        $this->assertEquals(['click_action' => 'ca'], $notification->jsonSerialize());
+    }
+
+    public function testSetSound()
+    {
+        $notification = new Notification(null);
+        $notification->setSound('soundName');
+        $this->assertEquals(['sound' => 'soundName'], $notification->jsonSerialize());
+    }
+
+
+
+    public function testSetCustomPropertyException()
+    {
+        $this->expectException(\RuntimeException::class);
+        $notification = new Notification(null);
+        $notification->test ='a';
+    }
+
+
 }
 
