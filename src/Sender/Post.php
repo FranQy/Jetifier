@@ -18,16 +18,16 @@ class Post implements SenderInterface
     /**
      * @param string $url
      * @param Message $message
+     * @param string $apiKey
      * @return array
-     *
-     * @throws \Jetifier\Exceptions\JetifierException
+     * @throws JetifierException
      */
     public function send(string $url, Message $message, string $apiKey): array
     {
 
         $options = array(
             'http' => array(
-                'header' => ["Content-type: application/json",
+                'header' => ['Content-type: application/json',
                              "Authorization: key=$apiKey"],
                 'method' => 'POST',
                 'content' => json_encode($message)

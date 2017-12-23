@@ -42,7 +42,9 @@ class Curl implements SenderInterface
 
         if ($result === false) {
             throw  new JetifierException('Curl failure');
-        }else if($httpCode !== 200){
+        }
+
+        if($httpCode !== 200){
             throw  new JetifierException('HTTP code: '.$httpCode);
         }
 

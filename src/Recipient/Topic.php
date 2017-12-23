@@ -25,7 +25,7 @@ class Topic implements RecipientInterface
 
     /**
      * Topic constructor.
-     * @param string $topic Topic in format maches "[a-zA-Z0-9-_.~%]+" regex
+     * @param string $topic Topic in format matches "[a-zA-Z0-9-_.~%]+" regex
      */
     public function __construct(string $topic)
     {

@@ -60,7 +60,7 @@ class Message implements \JsonSerializable
     public function setPriority(string $priority): Message
     {
         if (!\defined(Priority::class . '::' . $priority)) {
-            throw  new JetifierException("Priority must be property of Constants\Priority class");
+            throw  new JetifierException("Priority must be property of Constants \ Priority class");
         }
         $this->simpleData['priority'] = $priority;
 

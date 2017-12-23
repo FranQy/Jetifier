@@ -29,7 +29,7 @@ class Notification implements \JsonSerializable
      * Notification constructor.
      * @param string $title The notification's title.  This field is not visible on iOS phones and tablets.
      */
-    public function __construct(?string $title=null)
+    public function __construct(?string $title = null)
     {
         $this->data['title'] = $title;
     }
@@ -51,8 +51,9 @@ class Notification implements \JsonSerializable
      * @param string $title
      * @return Notification
      */
-    public function setTitle(string $title){
-        $this->data['title']=$title;
+    public function setTitle(string $title): Notification
+    {
+        $this->data['title'] = $title;
         return $this;
     }
 
@@ -62,7 +63,7 @@ class Notification implements \JsonSerializable
      * @param string $body
      * @return Notification
      */
-    public function setBody(string $body)
+    public function setBody(string $body): Notification
     {
         $this->data['body'] = $body;
         return $this;
@@ -74,7 +75,7 @@ class Notification implements \JsonSerializable
      * @param string $sound
      * @return Notification
      */
-    public function setSound(string $sound)
+    public function setSound(string $sound): Notification
     {
         $this->data['sound'] = $sound;
         return $this;
@@ -93,7 +94,7 @@ class Notification implements \JsonSerializable
      * @return Notification
      * @throws \InvalidArgumentException
      */
-    public function setBadge(int $badge)
+    public function setBadge(int $badge): Notification
     {
         $this->checkBadge($badge);
         $this->data['badge'] = $badge;
@@ -118,7 +119,7 @@ class Notification implements \JsonSerializable
      * @param string $clickAction
      * @return Notification
      */
-    public function setClickAction(string $clickAction)
+    public function setClickAction(string $clickAction): Notification
     {
         $this->data['click_action'] = $clickAction;
         return $this;
@@ -135,7 +136,7 @@ class Notification implements \JsonSerializable
      * @param mixed $icon
      * @return Notification
      */
-    public function setIcon(string $icon)
+    public function setIcon(string $icon): Notification
     {
         $this->data['icon'] = $icon;
         return $this;
@@ -149,7 +150,7 @@ class Notification implements \JsonSerializable
      * @return Notification
      * @throws \InvalidArgumentException
      */
-    public function setColor(string $color)
+    public function setColor(string $color): Notification
     {
         $this->checkColor($color);
         $this->data['color'] = $color;
@@ -181,7 +182,7 @@ class Notification implements \JsonSerializable
      * @param mixed $tag
      * @return Notification
      */
-    public function setTag(string $tag)
+    public function setTag(string $tag): Notification
     {
         $this->data['tag'] = $tag;
         return $this;

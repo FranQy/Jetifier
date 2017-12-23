@@ -35,7 +35,7 @@ class Data implements \JsonSerializable
     private function checkKey(string $key)
     {
         if (isset($this->data[$key])) {
-            throw new \InvalidArgumentException("Data with that key already exists");
+            throw new \InvalidArgumentException('Data with that key already exists');
         }
     }
 
