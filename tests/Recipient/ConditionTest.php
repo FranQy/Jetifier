@@ -24,6 +24,13 @@ class ConditionTest extends TestCase
         $this->assertEquals($formatted, $condition->getIdentifier());
     }
 
+    public function testGetKey()
+    {
+        $key = 'condition';
+        $device = new Condition(new Topic('topic'));
+        $this->assertEquals($key, $device->getKey());
+    }
+
     public function testAddAndTopic()
     {
 

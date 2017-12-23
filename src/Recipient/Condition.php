@@ -14,7 +14,7 @@ use Jetifier\Exceptions\BadRecipientIdentifierException;
 class Condition implements RecipientInterface
 {
 
-    private static $key='condition';
+    private static $key = 'condition';
     private static $maxTopicsCount = 3;
     private $topicsCount = 0;
     private $condition = '';
@@ -22,6 +22,7 @@ class Condition implements RecipientInterface
 
     /**
      * Condition constructor.
+     * @param Topic $topic
      * @throws \Jetifier\Exceptions\BadRecipientIdentifierException
      */
     public function __construct(Topic $topic)
