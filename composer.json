@@ -1,14 +1,16 @@
 {
-    "name": "pk/jetifier",
-    "description": "PHP Firebase Cloud Messaging library",
+    "name": "Jaebe/Jetifier",
     "type": "library",
+    "description": "PHP Firebase Cloud Messaging library",
+    "keywords": ["FCM","firebase","push","notification"],
+    "homepage": "https://github.com/FranQy/Jetifier",
     "require-dev": {
         "phpunit/phpunit": "^6.5"
     },
     "authors": [
         {
-            "name": "PK",
-            "email": "dev.franqy@gmail.com"
+            "name": "Przemyslaw Kula",
+            "email": "kula.przemyslaw@outlook.com"
         }
     ],
     "autoload":{
