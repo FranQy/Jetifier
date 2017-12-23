@@ -1,9 +1,15 @@
+<?xml version = "1.0" encoding="UTF-8" ?>
 <phpunit colors="true" strict="true">
+    <testsuites>
+        <testsuite name="Tests">
+            <directory>./tests/</directory>
+        </testsuite>
+    </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src/</directory>
             <exclude>
-            <directory suffix=".php">./src/Sender/</directory>
+                <directory suffix=".php">./src/Sender/</directory>
             </exclude>
         </whitelist>
     </filter>
