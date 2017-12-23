@@ -22,6 +22,13 @@ class DeviceTest extends TestCase
         $this->assertEquals($identifier, $device->getIdentifier());
     }
 
+    public function testGetKey()
+    {
+        $key = 'to';
+        $device = new Device('');
+        $this->assertEquals($key, $device->getKey());
+    }
+
     public function testGetIdentifierException()
     {
         $device = new Device('');
