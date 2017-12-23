@@ -52,21 +52,27 @@ class MessageTest extends TestCase
 
         $message->setRecipient($topic)
             ->setNotification($notification)
+            ->setPriority(Priority::NORMAL)
+            ->setDryRun(false)
+            ->setRestrictedPackageName('package')
+            ->setTimeToLive(120)
+            ->setMutableContent(true)
+            ->setContentAvailable(true)
+            ->setCollapseKey('collapse')
             ->setData($data);
 
         $expect = [
-            'priority' => Priority::HIGH,
+            'priority' => Priority::NORMAL,
+            'collapse_key'=>'collapse',
+            'content_available'=>true,
+            'mutable_content'=>true,
+            'time_to_live'=>120,
+            'restricted_package_name'=>'package',
             'dry_run' => false,
             'to' => $topic->getIdentifier(),
-            'notification' =>
-                [
-                    'title' => 'title',
-                    'body' => 'body'
-                ],
-            'data' => [
-                'a' => 'aa',
-                'b' => 'bb'
-            ]
+
+            'notification' =>$notification->jsonSerialize(),
+            'data' => $data->jsonSerialize()
         ];
         $messageArray = $message->jsonSerialize();
        $this->assertEquals($expect,$messageArray);
