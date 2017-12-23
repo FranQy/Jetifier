@@ -1,5 +1,5 @@
 {
-    "name": "Jaebe/Jetifier",
+    "name": "jaebe/jetifier",
     "type": "library",
     "description": "PHP Firebase Cloud Messaging library",
     "keywords": ["FCM","firebase","push","notification"],
