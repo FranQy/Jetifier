@@ -1,0 +1,10 @@
+<phpunit colors="true" strict="true">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./src/</directory>
+            <exclude>
+            <directory suffix=".php">./src/Sender/</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+</phpunit>
